@@ -1,19 +1,21 @@
 [project]
 name = "apple-calendar-mcp"
-version = "0.1.0"
-description = "Apple Calendar MCP Server - EventKit 기반 캘린더 관리"
+version = "0.2.0"
+description = "Apple Calendar CLI - EventKit 기반 캘린더 관리"
 requires-python = ">=3.12"
 license = {text = "MIT"}
 authors = [{name = "Allen Kim"}]
-keywords = ["apple-calendar", "eventkit", "mcp", "calendar"]
+keywords = ["apple-calendar", "eventkit", "calendar", "cli"]
 
 dependencies = [
-    "mcp[cli]>=1.2.1",
     "pyobjc-framework-EventKit>=11.0",
+    "pydantic>=2.5.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
 ]
 
 [project.scripts]
-apple-calendar-mcp = "apple_calendar_mcp.server:main"
+cal = "apple_calendar_mcp.cli:app"
 
 [build-system]
 requires = ["hatchling"]
